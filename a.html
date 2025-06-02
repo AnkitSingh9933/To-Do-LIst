@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive To-Do List</title>
+    <link rel="stylesheet" href="b.css">
+    <link href="b.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <header class="app-header">
+                <h1><i class="fas fa-tasks"></i> My Tasks</h1>
+                <div class="stats">
+                    <span class="stat-item">
+                        <span class="stat-number" id="totalTasks">0</span>
+                        <span class="stat-label">Total</span>
+                    </span>
+                    <span class="stat-item">
+                        <span class="stat-number" id="completedTasks">0</span>
+                        <span class="stat-label">Done</span>
+                    </span>
+                </div>
+            </header>
+
+            <div class="input-section">
+                <div class="input-wrapper">
+                    <input type="text" id="taskInput" placeholder="What needs to be done?" maxlength="100">
+                    <button id="addBtn" class="add-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="priority-selector">
+                    <label>Priority:</label>
+                    <select id="prioritySelect">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+                <button id="clearCompleted" class="clear-btn">
+                    <i class="fas fa-trash"></i> Clear Completed
+                </button>
+            </div>
+
+            <div class="tasks-section">
+                <div id="tasksList" class="tasks-list">
+                    <!-- Tasks will be dynamically added here -->
+                </div>
+                <div id="emptyState" class="empty-state">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3>No tasks yet!</h3>
+                    <p>Add a task above to get started.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
